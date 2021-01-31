@@ -21,15 +21,25 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <ul className="navbar-nav ml-auto">
-                    <li className="nav-item active">
+                    <li className="nav-item">
                         <NavLink className="nav-link" to="/login">
                             Se connecter
                         </NavLink>
                     </li>
-                    <li className="nav-item active">
+                    <li className="nav-item">
                         <NavLink className="nav-link" to="/register">
                             S'enregistrer
                         </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/account">
+                            Mon compte
+                        </NavLink>
+                    </li>
+                    <li>
+                        <button className="btn btn-danger">
+                            Déconnexion
+                        </button>
                     </li>
                 </ul>
             </div>
