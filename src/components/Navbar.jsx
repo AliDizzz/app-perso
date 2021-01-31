@@ -10,15 +10,28 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarColor01">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <NavLink>
-                            <a className="nav-link" href="#">Home
-                            <span className="sr-only">(current)</span>
-                            </a>
+                        <NavLink className="nav-link" to="/">
+                            Accueil
                         </NavLink>
                     </li>
-                    
+                    <li className="nav-item active">
+                        <NavLink className="nav-link" to="/posts">
+                            Posts
+                        </NavLink>
+                    </li>
                 </ul>
-
+                <ul className="navbar-nav ml-auto">
+                    <li className="nav-item active">
+                        <NavLink className="nav-link" to="/login">
+                            Se connecter
+                        </NavLink>
+                    </li>
+                    <li className="nav-item active">
+                        <NavLink className="nav-link" to="/register">
+                            S'enregistrer
+                        </NavLink>
+                    </li>
+                </ul>
             </div>
         </nav>
     );
