@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Post = () => {
+const Post = (props) => {
     return (
-        <div>
-            <h1>post</h1>
+        <div className="jumbotron">
+            <h1 className="display-3">Post name</h1>
+            <p className="lead">Created At: ... | Created By : ...</p>
+            <hr className="my-4"/>
+            <p>Post Content</p>
         </div>
     );
 };
