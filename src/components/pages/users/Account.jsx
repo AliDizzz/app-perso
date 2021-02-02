@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Profile from './Profile';
+import Posts from '../posts/Posts'
 
 const Account = (props) => {
     
@@ -17,11 +19,15 @@ const Account = (props) => {
             <ul>
                 {tabs.map((tab, index) => (
                     <li className={`tabs-pane ${currentTab.name === tab.tabKey ? "active" : ""}`}>
-                    <span onClick={() => handlTabs(tab.tabKey)}>{tab.tabTitle}</span>
+                    <span onClick={() => handleTabs(tab.tabKey)}>{tab.tabTitle}</span>
                 </li>
                 )
                 )}
             </ul>
+        </div>
+        <div className="tabs-contents">
+            {currentTab.name === 'profile' && <Profile />}
+            {currentTab.name === 'posts' && <Posts />}
         </div>
         </>
     );
