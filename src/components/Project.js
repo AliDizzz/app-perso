@@ -4,9 +4,18 @@ import { projectsData } from '../data/projectsData'
 const Project = (props) => {
     const [currentProject] = useState(projectsData);
     const project = currentProject[props.projectNumber];
+
     return (
-        <div>
-            <h1>Project numero {props.projectNumber}</h1>
+        <div className="project-main">
+            <div className="project-content">
+                <h1>{project.title}</h1>
+                <p>{project.date}</p>
+                <ul className="languages">
+                    {project.languages.map((item) => {
+                        return <li key={item}>{item}</li>
+                    })}
+                </ul>
+            </div>
         </div>
     );
 };
