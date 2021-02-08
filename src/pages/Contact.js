@@ -3,6 +3,8 @@ import Logo from '../components/Logo';
 import Mouse from '../components/Mouse';
 import Navigation from '../components/Navigation';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import SocialNetwork from '../components/SocialNetwork';
+import ButtonsBottom from '../components/ButtonsBottom';
 
 const Contact = () => {
     return (
@@ -40,6 +42,11 @@ const Contact = () => {
                     </div>
                 </div>
                 </div>
+                <SocialNetwork />
+                <div className="credits">
+                    <p>Yildiz - 2021</p>
+                </div>
+                <ButtonsBottom left={'/project-4'} />
             </div>
         </main>
     );
