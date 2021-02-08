@@ -41,10 +41,11 @@ const Contact = () => {
                         </CopyToClipboard>
                     </div>
                 </div>
-                </div>
                 <SocialNetwork />
+                
                 <div className="credits">
                     <p>Yildiz - 2021</p>
+                </div>
                 </div>
                 <ButtonsBottom left={'/project-4'} />
             </div>
