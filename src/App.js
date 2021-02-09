@@ -1,12 +1,15 @@
 import React from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import { Project1, Project2, Project3, Project4 } from './pages/Projects';
 
 const App = () => {
+  const location = useLocation();
+  const history = useHistory();
+
   return (
-    <Switch >
+    <Switch location={location} key={location.pathname}>
       <Route exact path='/' component={Home} />
       <Route exact path='/project-1' component={Project1} />
       <Route exact path='/project-2' component={Project2} />
