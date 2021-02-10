@@ -11,8 +11,44 @@ const App = () => {
 
   useEffect(() => {
     const handleScrollToElement = (e) => {
-      console.log('scroll' + e.weelDeltaY);
-    }
+      const url = window.location.origin + "/";
+
+      const wheelRouter = (after, before) => {
+        if (e.wheelDeltaY < 0) {
+          history.push(after)
+        } else if (e.wheelDeltaY > 0) {
+          history.push(before);
+        }
+      }
+
+
+      switch (window.location.href.toString()) {
+        case url:
+          if (e.wheelDeltaY < 0) {
+            history.push('project-1')
+          }
+          break;
+        case url + "project-1":
+          wheelRouter('project-2', "");
+          break;
+        case url + "project-2":
+          wheelRouter('project-3', "project-1");
+          break;
+        case url + "project-3":
+          wheelRouter('project-4', "project-2");
+          break;
+        case url + "project-4":
+          wheelRouter('contact', "project-3");
+          break;
+        case url + "contact":
+          if (e.wheelDeltaY > 0) {
+            history.push('project-4');
+          }
+        break;
+        default:
+          console.log('nothing');
+      }
+    };
 
     window.addEventListener('wheel', handleScrollToElement)
   }, [history])
