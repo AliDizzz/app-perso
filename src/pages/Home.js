@@ -6,6 +6,23 @@ import Navigation from '../components/Navigation';
 import SocialNetwork from '../components/SocialNetwork';
 
 const Home = () => {
+
+    const variants = {
+        initial: {
+            opacity: 0,
+            transition: { duration: 0.5},
+            x: 100,
+        },
+        visible: {
+            opacity: 1,
+            x: 0
+        },
+        exit: {
+            opacity: 0,
+            transition: { duration: 0.3},
+            x: -100
+        }
+    }
     return (
         <main>
             <Mouse />

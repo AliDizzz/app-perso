@@ -1,9 +1,11 @@
+import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { useEffect } from 'react';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import { Project1, Project2, Project3, Project4 } from './pages/Projects';
+
 
 const App = () => {
   const location = useLocation();
@@ -60,7 +62,8 @@ const App = () => {
   }, [history])
 
   return (
-    <Switch location={location} key={location.pathname}>
+    <AnimatePresence >
+      <Switch location={location} key={location.pathname}>
       <Route exact path='/' component={Home} />
       <Route exact path='/project-1' component={Project1} />
       <Route exact path='/project-2' component={Project2} />
@@ -69,6 +72,7 @@ const App = () => {
       <Route exact path='/contact' component={Contact} />
       <Redirect to='/' />
     </Switch>
+    </AnimatePresence>
   );
 };
 
