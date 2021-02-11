@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import ButtonsBottom from '../components/ButtonsBottom';
 import DynamicText from '../components/DynamicText';
@@ -10,7 +11,7 @@ const Home = () => {
     const variants = {
         initial: {
             opacity: 0,
-            transition: { duration: 0.5},
+            transition: { duration: 0.5 },
             x: 100,
         },
         visible: {
@@ -19,24 +20,30 @@ const Home = () => {
         },
         exit: {
             opacity: 0,
-            transition: { duration: 0.3},
+            transition: { duration: 0.3 },
             x: -100
         }
     }
+    
     return (
         <main>
             <Mouse />
-            <div className="home">
+            <motion.div
+                className="home"
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                variants={variants}>
                 <Navigation />
-            <SocialNetwork />
-            <div className="home-main">
-                <div className="main-content">
-                    <h1>CAFE RACER</h1>
-                    <h2> <DynamicText /> </h2>
+                <SocialNetwork />
+                <div className="home-main">
+                    <div className="main-content">
+                        <h1>CAFE RACER</h1>
+                        <h2> <DynamicText /> </h2>
+                    </div>
                 </div>
-            </div>
-            <ButtonsBottom right={"/project-1"} />
-            </div>
+                <ButtonsBottom right={"/project-1"} />
+            </motion.div>
         </main>
     );
 };
