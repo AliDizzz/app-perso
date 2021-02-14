@@ -26,7 +26,14 @@ const Contact = () => {
     return (
         <main>
             <Mouse />
-            <motion.div className="contact">
+            <motion.div 
+            className="contact"
+            exit="out"
+            animate="in"
+            initial="out"
+            variants={variants}
+            transition={transition}
+            >
                 <Navigation />
                 <Logo />
                 <ContactForm />
