@@ -51,7 +51,7 @@ const Contact = () => {
                         <h4>téléphone</h4>
                         <CopyToClipboard text="0773484244" className="hover">
                             <p style={{cursor: 'pointer'}} className="clipboard" onClick={() => {
-                                alert("Téléphone copié !");}}>07 73 48 42 44</p>
+                                alert("Téléphone copié !");}}>Tel: 07 73 48 42 44</p>
                         </CopyToClipboard>
                     </div>
                 </div>
